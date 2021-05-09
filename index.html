@@ -1,50 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
-    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+     integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    
   </head>
   <body>
-    <h1>Pomodoro Timer</h1>
+    <div class="container">
+      <h1>Pomodoro Timer</h1>
+        <div class="set-time">
+          <h4>Choose the length of your pomodoro</h4>
+          <p><span id="mins">01</span> minutes<br><span id="more" onclick="more()"><i class="fa fa-plus-circle"></i></span> <span id="less" onclick="less()"><i class="fa fa-minus-circle"></i></span></p>
+        </div>
+        
+        <div id="timer">
+        <div class="clock"><span id="mins-left">01</span>m <span id="secs-left">00</span>s</div>
+        <button class="button start" id="start" onclick="startTimer()">Start</button>
+        <button class="button stop" id="stop" onclick="stopTimer()">Stop</button>
+        <button class="button reset" id="reset" onclick="resetTimer()">Reset</button>
+        </div>
+      </div>
 
-    <figure class="clock">
-      <div class="mins">0</div>
-      <div>:</div>
-      <div class="secs">00</div>
-      <audio
-        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
-      ></audio>
-      <svg class="progress-ring" height="120" width="120">
-        <circle
-          class="progress-ring__circle"
-          stroke-width="8"
-          fill="transparent"
-          r="50"
-          cx="60"
-          cy="60"
-        />
-      </svg>
-    </figure>
+      <script src="script.js" ></script>
 
-    <div class="btn-group">
-      <button class="start">start focus</button>
-      <button class="reset">reset</button>
-      <button class="pause">pause</button>
-    </div>
-
-    <form>
-      <label for="focusTime">Timer</label>
-      <input type="number" value="" id="focusTime" placeholder="Enter time"/>
-      <label for="breakTime">Break Time</label>
-      <input type="number" value="" id="breakTime" placeholder="Enter break time"/>
-      <button type="submit">Save settings</button>
-
-    </form>
-   
-    <script src="settings.js"></script>
-    <script src="timer.js"></script>
-    <script src="progress.js"></script>
   </body>
 </html>
